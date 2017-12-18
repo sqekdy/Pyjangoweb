@@ -25,7 +25,8 @@ SECRET_KEY = 'o@8pgs01^&gy!qsx*$xugavees*=7*!yj!p3-@_t9=_#5yf64z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['sqekdy.pythonanywhere.com']
+ALLOWED_HOSTS = ['sqekdy.pythonanywhere.com',
+                 '127.0.0.1']
 
 
 # Application definition
@@ -63,6 +64,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                
             ],
         },
     },
@@ -118,4 +120,10 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
+
 STATIC_URL = '/static/'
+
+
+STATIC_ROOT= os.path.join(BASE_DIR, 'StaticFiles')
+
+#STATICFILES_DIRS=os.path.join(BASE_DIR, 'readyapp/static') If we want to look for static files other than /static directory

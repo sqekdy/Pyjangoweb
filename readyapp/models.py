@@ -13,6 +13,6 @@ class EmployeeInput(models.Model):
         db_table="employeedetails"
 
     def __str__(self):
-        return self.employee_number
+        return self.employee_name
 
     
