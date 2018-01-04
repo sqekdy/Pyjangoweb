@@ -42,19 +42,26 @@
      <li><a href="/about/">About</a></li>
      <li><a href="#">Page 2</a></li>
    </ul>
+   {% block before_auth %}
    <ul class="nav navbar-nav navbar-right">
-     <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-     <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+     <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+     <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
    </ul>
+   {% endblock %}
  </div>
 </nav>
 
 
+
+<!--Modals for login/signup-->
   {%block additionalbodycontent %}
 
   <h4>Hi!, This is still under Construction ! </h4>
 
   {% endblock%}
+
+  {%block modalcontent %}
+  {%endblock %}
 
 </body>
 
