@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'crispy_forms',
     'readyapp',
+    'roommate',
+    'crispy_forms'
     
 ]
 
@@ -54,6 +55,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'ProjectReady.urls'
+
+LOGIN_REDIRECT_URL ='/userPage'
 
 TEMPLATES = [
     {
@@ -104,7 +107,7 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-LOGIN_REDIRECT_URL="/"
+#LOGIN_REDIRECT_URL="/"
 
 
 # Internationalization

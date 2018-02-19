@@ -1,43 +1,25 @@
 from django.db import models
-from django.forms import ModelForm
+from django import forms
+from django.contrib.auth.models import User
+from django.contrib.auth.forms import UserCreationForm# change in here
 
 # Create your models here.
 
 #We need to define the page for the employee input
 
-class EmployeeInput(models.Model):
-    employee_name=models.CharField(max_length=20)
-    employee_number= models.CharField(max_length=10)
-    employee_email=models.CharField(max_length=30)
 
+class UserForm(UserCreationForm):
+    #user_password=forms.CharField(widget=forms.PasswordInput)
+    
     class Meta:
-        db_table="employeedetails"
+        model=User
+        fields=('username', 'email', 'password1','password2')
 
-    def __str__(self):
-        return self.employee_name
-
-
-
-class UserCredentials(models.Model):
-    user_name=models.CharField(max_length=20)
-    user_email=models.CharField(max_length=20)
-    user_password=models.CharField(max_length=20)
-
+class loginForm(UserCreationForm):
+    #user_password=forms.CharField(widget=forms.PasswordInput)
     class Meta:
-        db_table="userdetails"
-
-    def __str__(self):
-        return (self.user_name)
-
-class UserForm(ModelForm):
-    class Meta:
-        model=UserCredentials
-        fields=['user_name', 'user_email', 'user_password']
-
-class loginForm(ModelForm):
-    class Meta:
-        model=UserCredentials
-        fields=['user_name','user_password']
+        model=User
+        fields=('username','password1')
         
 
 
