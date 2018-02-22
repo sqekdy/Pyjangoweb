@@ -6,20 +6,41 @@
 
 
   <style>
-  .bg-4 {
-        background-color: #2f2f2f; /* Black Gray */
-        color: #fff;
+
+  html{
+    position: relative;
+    min-height: 100%;
+  }
+
+
+    body{
+      padding-bottom:60px;
     }
 
-    .footer{
+
+
+   .footer{
+      position:absolute;
       text-align: center;
+      bottom:0;
+      width:100%;
+      height:60px;
+      background-color: #2f2f2f;
+      color: #fff
+
     }
+
+
+
+
   </style>
 
+  
 </head>
 
 {%load static %}
-<body background="{% static "123back.jpg" %}">
+
+<body  background="{% static "123back.jpg" %}">
 
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css">
@@ -35,13 +56,24 @@
 <nav class="navbar navbar-inverse">
  <div class="container-fluid">
    <div class="navbar-header">
+
+     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       <span class="icon-bar"></span>
+       </button>
      <a class="navbar-brand" href="/">R&D Sqekdy</a>
    </div>
-   <ul class="nav navbar-nav">
-     <li class="active"><a href="/">Home</a></li>
+   <div class="collapse navbar-collapse" id="myNavbar">
+
+
+  <ul class="nav navbar-nav" >
+     <li><a href="/">Home</a></li>
      <li><a href="/about/">About</a></li>
      <li><a href="/userPage/newEntry/">RoomMate</a></li>
    </ul>
+
+
    {% block before_auth %}
    <ul class="nav navbar-nav navbar-right">
      <li><a href="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
@@ -49,6 +81,7 @@
    </ul>
    {% endblock %}
  </div>
+</div>
 </nav>
 
 
@@ -65,10 +98,12 @@
 
 </body>
 
-<footer class="footer bg-4  navbar-fixed-bottom" >
+<footer class="footer" >
+  <div class="text-center">
   <p>Copyright. </br> <p> Created and Maintained by
     <span class="glyphicon glyphicon-user"></span>
     <a href="https://www.twitter.com/sqekdy">Sqekdy </a></p>
+  </div>
 </footer>
 
 </html>
