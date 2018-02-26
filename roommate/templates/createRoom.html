@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+{% block before_auth %}
+<ul class="nav navbar-nav navbar-right">
+
+
+</ul>
+
+{% endblock %}
+{% block additionalbodycontent %}
+
+{% load crispy_forms_tags %}
+
+
+<h2> <center>Welcome to the world of Rooms !!</center></h2>
+<hr>
+
+<div class="container">
+
+    <div class="row">
+        <div class="col-sm-12">
+
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Create Room</button>
+  <div id="demo" class="collapse">
+
+      <form method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button type="submit"> Create </button>
+</form>
+
+  </div>
+    </div>
+    </div>
+
+    <br><br><br>
+
+
+    <div class="row">
+        <div class="col-sm-12">
+
+        <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#demo">Enter Room</button>
+  <div id="demo" class="collapse">
+
+      <form method="post">
+    {% csrf_token %}
+    {{form|crispy}}
+    <button type="submit"> Enter </button>
+</form>
+
+  </div>
+        </div>
+
+    </div>
+
+
+</div>
+
+
+
+{% endblock %}

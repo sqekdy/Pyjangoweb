@@ -22,6 +22,24 @@ class ExpenseForm(ModelForm):
         fields=['Entry_Made_By','Amount','Description']
 
 
+class NewRoom(models.Model):
+    Room_Name=models.CharField(max_length=10)
+    Maximum_Participants=models.IntegerField()
+    Room_Type=models.CharField(max_length=20)
+    Address=models.CharField(max_length= 50)
+
+    def __str__(self):
+        return '%s, %s' %(self.Room_Name, self.Maximum_Participants)
+
+
+class RoomForm(ModelForm):
+    class Meta:
+        model=NewRoom
+        fields=['Room_Name','Maximum_Participants','Room_Type','Address']
+
+
+
+
 
 
 
